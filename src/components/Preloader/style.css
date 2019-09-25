@@ -1,0 +1,51 @@
+:root {
+  --logo-size: 80px;
+  --logo-half-size: calc(var(--logo-size) / 2);
+}
+
+.preloader {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #282c34;
+  position: relative;
+  transition: 0.5s;
+}
+
+.preloader__image_animate {
+  background-image: url(./logo.svg);
+  background-size: var(--logo-size) var(--logo-half-size);
+  width: var(--logo-size);
+  height: var(--logo-size);
+  position: absolute;
+  top: calc(50% - var(--logo-half-size));
+  left: calc(50% - var(--logo-half-size));
+  transition: 1s linear;
+  animation: up-down 1s infinite;
+}
+
+@keyframes up-down {
+  0% {
+    top: calc(50% - var(--logo-half-size));
+  }
+  0% {
+    top: calc(50% - 10px);
+  }
+  75% {
+    top: calc(50%);
+  }
+  100% {
+    top: calc(50% - 10px);
+  }
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+
+  }
+}
